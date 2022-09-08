@@ -39,8 +39,7 @@ class TextGenerator:
             dict_of_words = collections.defaultdict(list)
             filter_words = self.tokenize(elem)
             filter_words.extend((filter_words[:self.length_of_gram:]))
-            # добавим в конец этого списка из начала количество слов, равное размену одного префикса,
-            # чтобы для каждого префикса можно было его чем-то продолжить
+            # добавим в конец этого списка из начала количество слов, равное размену одного префикса, чтобы для каждого префикса можно было его чем-то продолжить
             for i in range(len(filter_words) - self.length_of_gram):
                 prefix = tuple(filter_words[i:(i + self.length_of_gram):])
                 if len(prefix) == self.length_of_gram:  # чтобы добавлять только префиксы необходимой длины
